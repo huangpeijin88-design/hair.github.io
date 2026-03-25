@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>拍一张正脸，给你发型推荐</title>
+    <meta
+      name="description"
+      content="拍一张正脸照，生成发型推荐与理发店沟通关键词。照片仅本地预览，不上传。"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body data-page="index">
+    <main class="container">
+      <div class="topbar">
+        <div class="brand">
+          <span class="dot" aria-hidden="true"></span>
+          <span>发型顾问（演示版）</span>
+        </div>
+        <span class="pill">微信 / 抖音内打开</span>
+      </div>
+
+      <section class="hero">
+        <span class="kicker">拍一张正脸 · 2 秒出推荐</span>
+        <h1 class="h1">
+          拍一张正脸，<span class="accent">给你发型推荐</span>
+        </h1>
+        <p class="lead">
+          上传一张正脸照，生成脸型倾向、3–4 个发型推荐，以及可复制给理发师的沟通关键词。
+        </p>
+
+        <div class="cta-row">
+          <a id="enterBtn" class="btn btn-primary" href="#">
+            进入分析
+            <span aria-hidden="true">→</span>
+          </a>
+        </div>
+        <div class="hint">照片仅本地预览，不上传。</div>
+
+        <div id="banner" class="banner">
+          debug：你还没配置“进入短链”。当前按钮会回退为本地跳转，方便你自测（但不会统计人数）。
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title">你会得到什么</h2>
+        <div class="grid">
+          <div class="card">
+            <strong>脸型倾向</strong>
+            <p>圆 / 方 / 长 / 菱形 / 椭圆。</p>
+          </div>
+          <div class="card">
+            <strong>发型推荐</strong>
+            <p>3–4 个方向：清爽、质感、修饰，给出匹配理由与避坑提示。</p>
+          </div>
+          <div class="card">
+            <strong>沟通关键词</strong>
+            <p>一键复制给理发师：重点、层次、两侧收紧、前区修饰等。</p>
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <div>© 发型顾问</div>
+      </footer>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

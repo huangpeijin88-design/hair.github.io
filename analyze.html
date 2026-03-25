@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>上传正脸照 - 发型推荐</title>
+    <meta
+      name="description"
+      content="上传/拍一张正脸照（仅本地预览，不上传），约 2 秒生成脸型倾向与发型推荐。"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body data-page="analyze">
+    <main class="container">
+      <div class="topbar">
+        <div class="brand">
+          <span class="dot" aria-hidden="true"></span>
+          <a href="./index.html">发型顾问（演示版）</a>
+        </div>
+        <a class="pill" href="./index.html">返回首页</a>
+      </div>
+
+      <section class="hero">
+        <span class="kicker">上传正脸 · 生成推荐</span>
+        <h1 class="h1">上传正脸照</h1>
+        <p class="lead">
+          建议自然光、露出发际线、正脸居中。照片仅本地预览，不会上传。
+        </p>
+
+        <div class="uploader">
+          <div class="drop">
+            <div class="row">
+              <div class="file">
+                <div class="badge warn" id="statusBadge">等待上传正脸照（不上传，仅本地预览）</div>
+                <input
+                  id="photoInput"
+                  type="file"
+                  accept="image/*"
+                  capture="user"
+                />
+                <div class="hint">iPhone/部分机型可能不弹相机，仍可从相册选择。</div>
+              </div>
+              <button id="analyzeBtn" class="btn btn-primary" type="button" disabled>
+                开始分析
+              </button>
+            </div>
+            <div class="section" style="margin-top: 12px">
+              <div class="section-title">分析进度</div>
+              <div class="progress" aria-label="分析进度条">
+                <div id="progressBarInner"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="preview" aria-label="照片预览">
+            <div id="previewEmpty" class="hint" style="padding: 14px; text-align: center">
+              这里会显示你的正脸预览
+            </div>
+            <img id="previewImg" alt="" style="display: none" />
+          </div>
+        </div>
+
+        <div id="result" class="result">
+          <h2>分析结果</h2>
+          <div class="meta">
+            <span class="badge ok">已完成</span>
+            <span class="hint" style="margin-left: 8px">照片：<span id="fileHint"></span></span>
+          </div>
+
+          <div class="card">
+            <strong>脸型倾向：<span id="faceName"></span></strong>
+            <p id="faceSummary"></p>
+            <ul id="faceTips" style="margin: 10px 0 0; color: rgba(255,255,255,0.68); font-size: 13px"></ul>
+          </div>
+
+          <div class="section">
+            <div class="section-title">发型推荐</div>
+            <div id="recGrid" class="rec-grid"></div>
+          </div>
+
+          <div class="section">
+            <div class="section-title">一键复制给理发师</div>
+            <div class="card">
+              <textarea
+                id="copyText"
+                rows="7"
+                style="
+                  width: 100%;
+                  resize: none;
+                  border-radius: 14px;
+                  border: 1px solid rgba(255, 255, 255, 0.14);
+                  background: rgba(0, 0, 0, 0.18);
+                  color: rgba(255, 255, 255, 0.92);
+                  padding: 12px;
+                  font-size: 13px;
+                  line-height: 1.45;
+                "
+                readonly
+              ></textarea>
+              <div class="copy-row">
+                <button id="copyBtn" class="copy" type="button">复制文本</button>
+                <span class="hint">复制后直接粘贴发给理发师即可。</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer"><div>提示：回到首页请点右上角“返回首页”。</div></footer>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
